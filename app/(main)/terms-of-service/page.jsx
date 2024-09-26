@@ -16,10 +16,11 @@ export default function TermsOfService() {
       <p className="mb-4">Last updated: September 26, 2024</p>
 
       <p className="mb-4">
-        Welcome to Schedulee. Please read these Terms of Service ("Terms",
-        "Terms of Service") carefully before using the Schedulee website and
-        application (the "Service") operated by [Your Name or Company Name]
-        ("us", "we", or "our").
+        Welcome to Schedulee. Please read these Terms of Service
+        (&quot;Terms&quot;, &quot;Terms of Service&quot;) carefully before using
+        the Schedulee website and application (the &quot;Service&quot;) operated
+        by [Your Name or Company Name] (&quot;us&quot;, &quot;we&quot;, or
+        &quot;our&quot;).
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-4">
@@ -137,10 +138,11 @@ export default function TermsOfService() {
 
       <p className="mb-4">
         Your use of the Service is at your sole risk. The Service is provided on
-        an "AS IS" and "AS AVAILABLE" basis. The Service is provided without
-        warranties of any kind, whether express or implied, including, but not
-        limited to, implied warranties of merchantability, fitness for a
-        particular purpose, non-infringement or course of performance.
+        an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis. The Service is
+        provided without warranties of any kind, whether express or implied,
+        including, but not limited to, implied warranties of merchantability,
+        fitness for a particular purpose, non-infringement or course of
+        performance.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-4">10. Governing Law</h2>
@@ -156,7 +158,7 @@ export default function TermsOfService() {
       <p className="mb-4">
         We reserve the right, at our sole discretion, to modify or replace these
         Terms at any time. If a revision is material, we will try to provide at
-        least 30 days' notice prior to any new terms taking effect. What
+        least 30 days&apos; notice prior to any new terms taking effect. What
         constitutes a material change will be determined at our sole discretion.
       </p>
 
@@ -171,7 +173,7 @@ export default function TermsOfService() {
         <br />
         Email: parthpathakpp1@gmail.com
         <br />
-        Address: 19,Ramkishna Colony,Khargone,Madhya Pradesh
+        Address: 19,ramksihnacolony
       </p>
     </div>
   );

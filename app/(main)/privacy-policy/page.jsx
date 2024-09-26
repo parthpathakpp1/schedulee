@@ -14,9 +14,9 @@ export default function PrivacyPolicy() {
       <p className="mb-4">Last updated: September 26, 2024</p>
 
       <p className="mb-4">
-        Welcome to Schedulee ("we", "our", or "us"). We are committed to
-        protecting your privacy and ensuring you have a positive experience on
-        our website and in using our services.
+        Welcome to Schedulee . We are committed to protecting your privacy and
+        ensuring you have a positive experience on our website and in using our
+        services.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-4">
@@ -124,9 +124,7 @@ export default function PrivacyPolicy() {
         To exercise these rights, please contact us at [Your Contact Email].
       </p>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-4">
-        6. Children's Privacy
-      </h2>
+      <h2 className="text-2xl font-semibold mt-6 mb-4">6. Children Privacy</h2>
 
       <p className="mb-4">
         Schedulee is not intended for use by children under the age of 13. We do
@@ -142,7 +140,7 @@ export default function PrivacyPolicy() {
       <p className="mb-4">
         We may update this Privacy Policy from time to time. We will notify you
         of any changes by posting the new Privacy Policy on this page and
-        updating the "Last updated" date at the top of this Privacy Policy.
+        updating the Last updated date at the top of this Privacy Policy.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-4">8. Contact Us</h2>
@@ -157,7 +155,7 @@ export default function PrivacyPolicy() {
         <br />
         Email: parthpathakpp1@gmail.com
         <br />
-        Address: 19,Ramkishna Colony,Khargone,Madhya Pradesh
+        Address: 19,ramksihnacolony
       </p>
     </div>
   );
