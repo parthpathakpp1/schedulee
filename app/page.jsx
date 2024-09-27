@@ -54,7 +54,7 @@ const features = [
 const howItWorks = [
   {
     step: "Sign Up",
-    description: "Create your free Schedulrr account in seconds",
+    description: "Create your free Schedulee account in seconds",
   },
   {
     step: "Customize",
@@ -67,7 +67,7 @@ const howItWorks = [
   },
   {
     step: "Automate",
-    description: "Let Schedulrr handle the rest, from bookings to reminders",
+    description: "Let Schedulee handle the rest, from bookings to reminders",
   },
 ];
 
@@ -160,7 +160,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl font-bold text-center mb-16 text-blue-900"
           >
-            How Schedulrr Works
+            How Schedulee Works
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {howItWorks.map((step, index) => (
