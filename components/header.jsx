@@ -15,7 +15,7 @@ async function Header() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <Calendar className="h-8 w-8 text-blue-600" />
-          <span className="text-2xl font-bold text-blue-900">Schedulrr</span>
+          <span className="text-2xl font-bold text-blue-900">Schedulee</span>
         </Link>
 
         <nav className="hidden md:flex space-x-6">
