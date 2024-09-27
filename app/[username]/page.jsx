@@ -1,7 +1,10 @@
+import React from "react";
 import { notFound } from "next/navigation";
 import { getUserByUsername } from "@/actions/users";
 import EventCard from "@/components/event-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CalendarIcon, UserIcon } from "lucide-react";
 
 export async function generateMetadata({ params }) {
   const user = await getUserByUsername(params.username);
@@ -27,32 +30,43 @@ export default async function UserProfilePage({ params }) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col items-center mb-8">
-        <Avatar className="w-24 h-24 mb-4">
-          <AvatarImage src={user.imageUrl} alt={user.name} />
-          <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
-        </Avatar>
-        <h1 className="text-3xl font-bold mb-2">{user.name}</h1>
-        <p className="text-gray-600 text-center">
-          Welcome to my scheduling page. Please select an event below to book a
-          call with me.
-        </p>
-      </div>
+      <Card className="mb-8">
+        <CardContent className="pt-6">
+          <div className="flex flex-col items-center space-y-4">
+            <Avatar className="w-24 h-24">
+              <AvatarImage src={user.avatarUrl} alt={user.name} />
+              <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
+            </Avatar>
+            <h1 className="text-2xl font-bold">{user.name}</h1>
+            <p className="text-gray-600 text-center max-w-md">
+              Welcome to my scheduling page. Please select an event below to
+              book a call with me.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
 
-      {user.events.length === 0 ? (
-        <p className="text-center text-gray-600">No public events available.</p>
-      ) : (
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {user.events.map((event) => (
-            <EventCard
-              key={event.id}
-              event={event}
-              username={params.username}
-              isPublic
-            />
-          ))}
-        </div>
-      )}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2">
+            <CalendarIcon className="w-5 h-5" />
+            <span>Available Events</span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {user.events.length === 0 ? (
+            <p className="text-center text-gray-500">
+              No public events available.
+            </p>
+          ) : (
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {user.events.map((event) => (
+                <EventCard key={event.id} event={event} />
+              ))}
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

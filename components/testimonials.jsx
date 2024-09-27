@@ -6,9 +6,13 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Autoplay from "embla-carousel-autoplay";
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -49,39 +53,52 @@ const TestimonialsCarousel = () => {
           delay: 5000,
         }),
       ]}
-      className="w-full mx-auto"
+      className="w-full max-w-5xl mx-auto"
     >
       <CarouselContent>
         {testimonials.map((testimonial, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-            <Card className="h-full">
-              <CardContent className="flex flex-col justify-between h-full p-6">
-                <p className="text-gray-600 mb-4">
-                  &quot;{testimonial.content}&quot;
-                </p>
-                <div className="flex items-center mt-4">
-                  <Avatar className="h-12 w-12 mr-4">
-                    <AvatarImage
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                    />
-                    <AvatarFallback>
-                      {testimonial.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </AvatarFallback>
-                  </Avatar>
+          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Card className="h-full bg-blue-800 text-white shadow-xl">
+                <CardContent className="flex flex-col justify-between h-full p-6">
                   <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    <Quote className="w-8 h-8 text-blue-300 mb-4" />
+                    <p className="text-blue-100 mb-4">{testimonial.content}</p>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="flex items-center mt-4">
+                    <Avatar className="h-12 w-12 mr-4 border-2 border-blue-300">
+                      <AvatarImage
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                      />
+                      <AvatarFallback className="bg-blue-600 text-white">
+                        {testimonial.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <p className="font-semibold text-blue-100">
+                        {testimonial.name}
+                      </p>
+                      <p className="text-sm text-blue-300">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </CarouselItem>
         ))}
       </CarouselContent>
+      <CarouselPrevious className="hidden md:flex text-blue-100 bg-blue-700 hover:bg-blue-600" />
+      <CarouselNext className="hidden md:flex text-blue-100 bg-blue-700 hover:bg-blue-600" />
     </Carousel>
   );
 };
